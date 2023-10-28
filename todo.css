@@ -1,0 +1,19 @@
+button:not(.untouchable) {
+    margin-left: 20px;
+    background-image: url("https://cdn2.iconfinder.com/data/icons/web-mobile-app-basics/100/TiNY2_BASICS_Trash-512.png");
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+}
+#input{
+    width: 9em;
+    height: 2em;
+}
+
+li {
+    font-size: xx-large;
+}
+
+h1 {
+    font-size: 3em;
+}
