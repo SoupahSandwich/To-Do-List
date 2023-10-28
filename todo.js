@@ -9,7 +9,7 @@ for(let i = 0; i < savedList.length; i++) {
     todoItem.innerText = savedList[i].todo;
     todoItem.isCompleted = savedList[i].isCompleted ? true : false;
 
-    if(todoItem.isCompleted){//testing completion
+    if(todoItem.isCompleted){
         todoItem.style.textDecoration = "line-through";
     }
     todoList.appendChild(todoItem);
@@ -36,7 +36,6 @@ todoList.addEventListener("click", function(event){
     let targetClicked = event.target.tagName.toLowerCase();
     if(targetClicked === "li"){
         let clickedListItem = event.target;
-        //console.log(clickedListItem);
         if(!clickedListItem.isCompleted){
             clickedListItem.style.textDecoration = "line-through";
             clickedListItem.isCompleted = true;
@@ -51,13 +50,12 @@ todoList.addEventListener("click", function(event){
             }
         }
         
-    } else if( targetClicked === "button"){//updates local storage after deleting a li
+    } else if( targetClicked === "button"){
         let deletedItem = (event.target.parentElement.innerText);
         event.target.parentElement.remove();
         let newSaveList = [];
 
         for(let i = 0; i < savedList.length; i++) {
-            //console.log(savedList[i]["todo"]);
             if(savedList[i]["todo"] != deletedItem){
                 newSaveList.push(savedList[i])
             }
@@ -66,6 +64,4 @@ todoList.addEventListener("click", function(event){
         localStorage.setItem("todos", JSON.stringify(savedList));
     }
 
-// localStorage.setItem("list", JSON.stringify(todoList));
-// console.log(JSON.parse(localStorage.getItem("list")));
 })
